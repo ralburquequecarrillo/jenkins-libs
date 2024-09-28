@@ -1,5 +1,7 @@
 def call(Map params){
     pipeline{
+        agent any
+        
         stages{
             stage("Construyendo docker"){
                 steps{
