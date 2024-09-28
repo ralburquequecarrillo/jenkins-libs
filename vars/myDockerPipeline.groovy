@@ -6,9 +6,9 @@ def call(Map params){
             stage("Construyendo docker"){
                 steps{
                     script{
-                        myDockerLib.build(rutaArchivoDocker: "${params.rutaArchivoDocker}",
-                                            nombreImagenDocker: "${params.nombreImagenDocker}",
-                                            carpetaDocker: "${params.carpetaDocker}")
+                        myDockerLib.build(rutaArchivoDocker: params.rutaArchivoDocker,
+                                            nombreImagenDocker: params.nombreImagenDocker,
+                                            carpetaDocker: params.carpetaDocker)
                         }
                 }
                 
@@ -17,7 +17,7 @@ def call(Map params){
             stage("Pusheando docker"){
                 steps{
                     script{
-                        myDockerLib.push(nombreImagenDocker: "${params.nombreImagenDocker}")
+                        myDockerLib.push(nombreImagenDocker: params.nombreImagenDocker)
                     }
                 }
                 
