@@ -1,5 +1,7 @@
 def call(Map params){
     pipeline{
+        anget any
+        
         stages{
             stage("Construyendo docker"){
                 script{
