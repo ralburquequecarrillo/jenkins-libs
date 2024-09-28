@@ -1,5 +1,5 @@
 def build(Map params){
-    sh: "docker build -f " ${params.rutaArchivoDocker} + "-t " ${params.nombreImagenDocker} + ${params.carpetaDocker}
+    sh: "docker build -f " ${params.rutaArchivoDocker} + "-t " + ${params.nombreImagenDocker} + ${params.carpetaDocker}
 }
 
 def push(Map params){
